@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fraud Email Detector</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>📧 Fraud Email Detector</h1>
+    <p>Paste the email content below to check whether it is fraud or safe.</p>
+
+    <form method="POST">
+        <textarea name="email" placeholder="Paste email text here..." required>{{ email_text }}</textarea>
+        <button type="submit">Check Email</button>
+    </form>
+
+    {% if prediction %}
+        <div class="result">
+            {{ prediction }}
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
